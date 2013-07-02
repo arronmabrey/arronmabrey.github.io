@@ -39,11 +39,11 @@
 activate :livereload
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def gravatar_url(email, size=300)
+    "//www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email)}.jpg?s=#{size}"
+  end
+end
 
 set :css_dir, 'stylesheets'
 
