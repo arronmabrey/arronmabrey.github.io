@@ -12,5 +12,10 @@ html
     = stylesheet_link_tag "site"
     = javascript_include_tag "modernizr.custom.min"
   body class=page_classes
-    = yield
+    div.wrapper
+      = yield
+      footer
+        p
+          small Hosted on GitHub Pages &mdash; Theme by #{link_to 'orderedlist', "https://github.com/orderedlist"}
+
     = javascript_include_tag  "site"
