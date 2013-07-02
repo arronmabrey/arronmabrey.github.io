@@ -16,7 +16,3 @@ function gestureStart() {
   }
 }
 ;
-(function() {
-
-
-}).call(this);
