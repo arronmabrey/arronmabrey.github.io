@@ -1,1 +1,1 @@
-#= require_tree .
+#= require scale.fix.js
