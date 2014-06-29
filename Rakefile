@@ -91,11 +91,16 @@ namespace :deploy do
     system './bin/middleman build'
 
     cd PUBLISH_DIR do
-      system "git add ."
-      system "git add -u"
+      system "git add --all ."
       system "git commit -m 'Site built at #{Time.now.utc} from #{develop_branch} ref #{develop_branch_sha}'"
       system "git push #{git_remote} #{PUBLISH_BRANCH}"
     end
+
+    rm_rf PUBLISH_DIR
+
+    system "git checkout #{PUBLISH_BRANCH}"
+    system "git pull --ff-only"
+    system "git checkout #{DEVELOP_BRANCH}"
   end
 
 
