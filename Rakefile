@@ -103,7 +103,6 @@ namespace :deploy do
     system "git checkout #{DEVELOP_BRANCH}"
   end
 
-
   desc "Generate flat files and deploy to GitHub Pages"
   task github: [:ensure_development, :publish]
 
